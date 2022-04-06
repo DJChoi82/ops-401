@@ -30,8 +30,6 @@ while True:
        status = "Network Inactive to"
     #print date, time, status, and ip
     print(str(now), status, ip)
-    #print space
-    print()
     #sleep for 2 seconds
     time.sleep(2)
 
