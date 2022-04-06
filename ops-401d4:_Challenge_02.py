@@ -6,7 +6,6 @@
 #must run script as root(sudo)
 
 #importing pythonping
-from click import prompt
 from pythonping import ping
 
 #importing datetime library
