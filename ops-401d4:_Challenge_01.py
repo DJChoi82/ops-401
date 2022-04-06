@@ -14,14 +14,13 @@ import datetime
 #importing time library
 import time
 
-#assigning variable now to date and time
-now = datetime.datetime.now()
-
 #assigning variable ip to an ip address
 ip = input("Enter IP address:")
 
 #creating an infinite loop
 while True:
+    #assigning variable now to date and time
+    now = datetime.datetime.now()
     #pinging IP
     response_list = ping(ip, count=1)
     #checking if ping is successful
@@ -29,7 +28,6 @@ while True:
        status = "Network Active to"
     else:
        status = "Network Inactive to"
-
     #print date, time, status, and ip
     print(str(now), status, ip)
     #print space
