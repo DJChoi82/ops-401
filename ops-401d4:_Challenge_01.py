@@ -23,7 +23,7 @@ ip = input("Enter IP address:")
 #creating an infinite loop
 while True:
     #pinging IP
-    response_list = ping(ip, count=1,)
+    response_list = ping(ip, count=1)
     #checking if ping is successful
     if response_list.success(option=3):
        status = "Network Active to"
