@@ -3,6 +3,7 @@
 #DJ Choi
 #4/5/2022
 #Writing pythong script to evaluate hosts on Lan with ICMP packets
+#must run script as root(sudo)
 
 #importing pythonping
 from pythonping import ping
