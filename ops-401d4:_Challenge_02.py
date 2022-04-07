@@ -27,7 +27,7 @@ ip = input("Enter IP address:")
 password = getpass.getpass(prompt="Enter Email Password:")
 
 #assigning variable
-status1 = "none"
+laststatus = "none"
 
 #using gmail as server
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -50,14 +50,14 @@ def check_ping(target):
 
 #declaring function
 def statuschange():
-    if status1 == "Network Active to":
-        statusc = "up to down"
+    if laststatus == "Network Active to":
+        statuschange = "up to down"
     else:
-        statusc = "down to up"
-    if status1 == status or status1 == "none":
+        statuschange = "down to up"
+    if laststatus == status or laststatus == "none":
         pass
     else:
-        msg = ("\nHello, host " + ip + " changed status from " + statusc + " at " + str(now))
+        msg = ("\nHello, host " + ip + " changed status from " + statuschange + " at " + str(now))
         server.sendmail('djops401@gmail.com', 'djchoi82@gmail.com', msg)
 
 
@@ -73,7 +73,7 @@ while True:
     #calling function
     statuschange()
     #assigning a variable
-    status1 = status
+    laststatus = status
     #sleep for 2 seconds
     time.sleep(2)
     
