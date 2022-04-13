@@ -2,7 +2,7 @@
 #Class 6 Python Script
 #DJ Choi
 #4/11/2022
-#Writing python
+#Writing python script to encrypt and decrypt
 
 
 
