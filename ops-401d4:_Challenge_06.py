@@ -25,11 +25,11 @@ def menu():
 
     elif choice == '3':
         message = input("Enter message: ")
-        encrypt_message(message)
+        encrypt_message(message.encode())
 
     elif choice == '4':
         message = input("Enter message: ")
-        decrypt_message(message)
+        decrypt_message(message.encode())
 
     else:
         print("Invalid choice. Please try again.")
