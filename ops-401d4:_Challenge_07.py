@@ -27,11 +27,11 @@ def menu():
 
     if choice == '1':  
         filename = input("Enter filepath: ")
-        encrypt(filename)
+        encrypt_file(filename)
 
     elif choice == '2':
         filename = input("Enter filepath: ")
-        decrypt(filename)
+        decrypt_file(filename)
 
     elif choice == '3':
         message = input("Enter message: ")
@@ -51,7 +51,7 @@ def menu():
     else:
         print("Invalid choice. Please try again.")
 
-#checking if key file exist
+#writing key if it doesn't exist and load key
 def key_check():
     if os.path.isfile("./key.key"):
         key = load_key()
@@ -74,7 +74,7 @@ def decrypt_message(message):
     print("Plaintext is "+str(decrypted.decode('utf-8')))
 
 #encrypt file
-def encrypt(filename):
+def encrypt_file(filename):
     key_check()
     with open(filename, "rb") as file:
         file_data = file.read()
@@ -84,7 +84,7 @@ def encrypt(filename):
     print("File encrypted")
 
 #decrypt file
-def decrypt(filename):
+def decrypt_file(filename):
     key_check()
     with open(filename, "rb") as file:
         encrypted_data = file.read()
@@ -99,11 +99,11 @@ def encrypt_dir(folder):
         for name in files:
             file_path = (os.path.join(root, name))
             print(file_path)
-            encrypt(file_path)
+            encrypt_file(file_path)
         for name in dirs:
             file_path = (os.path.join(root, name))
             print(file_path)
-            encrypt(file_path)
+            encrypt_file(file_path)
 
 #decrypt directory and contents
 def decrypt_dir(folder):
@@ -111,11 +111,11 @@ def decrypt_dir(folder):
         for name in files:
             file_path = (os.path.join(root, name))
             print(file_path)
-            decrypt(file_path)
+            decrypt_file(file_path)
         for name in dirs:
             file_path = (os.path.join(root, name))
             print(file_path)
-            decrypt(file_path)
+            decrypt_file(file_path)
 
 # Main
 
