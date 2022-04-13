@@ -11,6 +11,29 @@ from cryptography.fernet import Fernet
 
 # Declare Functions
 
+#menu
+def menu():
+    choice = input("Options:\n[1] Encrypt a file\n[2] Decrypt a file\n[3] Encrypt a message\n[4] Decrypt a message\nEnter a number: ")
+
+    if choice == '1':  
+        filename = input("Enter filepath: ")
+        encrypt(filename)
+
+    elif choice == '2':
+        filename = input("Enter filepath: ")
+        decrypt(filename)
+
+    elif choice == '3':
+        message = input("Enter message: ")
+        encrypt_message(message)
+
+    elif choice == '4':
+        message = input("Enter message: ")
+        decrypt_message(message)
+
+    else:
+        print("Invalid choice. Please try again.")
+
 #generates key and save it to a file
 def write_key():
     key = Fernet.generate_key()
@@ -61,8 +84,9 @@ def decrypt(filename):
 
 # Main
 
+menu()
 
-
+#end
 
 
 
