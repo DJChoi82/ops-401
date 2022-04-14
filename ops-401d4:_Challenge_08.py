@@ -44,7 +44,7 @@ def menu():
         decrypt_message(message.encode())
 
     elif choice == '5':
-        folder = input("Enter foler path: ")
+        folder = input("Enter folder path: ")
         encrypt_dir(folder)
 
     elif choice == '6':
@@ -123,19 +123,11 @@ def encrypt_dir(folder):
             file_path = (os.path.join(root, name))
             print(file_path)
             encrypt_file(file_path)
-        for name in dirs:
-            file_path = (os.path.join(root, name))
-            print(file_path)
-            encrypt_file(file_path)
 
 #decrypt directory and contents
 def decrypt_dir(folder):
     for root, dirs, files in os.walk(folder, topdown=False):
         for name in files:
-            file_path = (os.path.join(root, name))
-            print(file_path)
-            decrypt_file(file_path)
-        for name in dirs:
             file_path = (os.path.join(root, name))
             print(file_path)
             decrypt_file(file_path)
