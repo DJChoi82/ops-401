@@ -21,14 +21,14 @@ def port_scan(dst_port):
         print("Port " + str(dst_port) + " is filtered and silently dropped")
     elif(response.haslayer(TCP)):
         if(response.getlayer(TCP).flags == 0x12):
-            send_rst = sr1(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags="AR"),timeout=5)
+            send_rst = sr(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags="AR"),timeout=5)
             print("Port " + str(dst_port) + " is open")
         elif (response.getlayer(TCP).flags == 0x14):
             print("Port " + str(dst_port) + " is closed")
 
-#maiin
+#main
 
-#for loop to scan all ports
+#for loop to scan all ports in dst_port
 for x in dst_port:
     port_scan(x)
 
